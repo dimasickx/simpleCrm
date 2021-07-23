@@ -10,11 +10,12 @@ from rest_framework import status
 
 
 # @api_view(['GET', 'POST'])
-# def get_orders(request):
-#     if request.method == 'GET':
-#         orders = Order.objects.all()
-#         serializer_orders = OrderSerializer(orders, many=True)
-#         return JsonResponse(serializer_orders.data, safe=False)
+def get_orders(request):
+    orders = Order.objects.all()
+    serializer_orders = OrderSerializer(orders, many=True)
+    return JsonResponse(serializer_orders.data, safe=False)
+    # if request.method == 'GET':
+
 #     elif request.method == 'POST':
 #         order_data = JSONParser().parse(request)
 #         order_serialize = OrderSerializer(data=order_data)
