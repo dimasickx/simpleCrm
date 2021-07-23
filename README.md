@@ -1,6 +1,6 @@
 # simpleCrm
 
-Run project:
+Run project for linux:
 
     python3 -m venv .venv
     source .venv/bin/activate
