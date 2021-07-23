@@ -7,6 +7,4 @@ from .models import Order
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_filter = ('created_at', 'type', 'status')
-    pass
-
-# admin.site.register(Order)
+    list_display = ['created_at', 'type', 'status', 'client', 'employee']
