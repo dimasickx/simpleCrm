@@ -15,4 +15,4 @@ class Employee(models.Model):
     position = models.CharField(max_length=60)
 
     def __str__(self):
-        return f"id: {self.id}"
+        return f"{self.surname} {self.name} {self.patronymic}"

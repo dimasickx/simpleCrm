@@ -15,4 +15,4 @@ class Client(models.Model):
     telegram_id = models.CharField(max_length=40)
 
     def __str__(self):
-        return f"id: {self.id}"
+        return f"{self.surname} {self.name} {self.patronymic}"
