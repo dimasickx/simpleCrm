@@ -17,4 +17,4 @@ Run project for linux:
     
     Также реальзован telegram api.
         чтобы воспользоваться нужно при регистрации пользователя указать chat_id пользователя
-        и в коде подставить токен бота
+        http://t.me/domClick_simpleCrmBot
