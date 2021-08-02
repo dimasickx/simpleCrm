@@ -7,7 +7,11 @@ from employees.models import Employee
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
+import requests
+
 # Create your models here.
+
+token = '1939870399:AAGtbP_G7iEVl3EvDxIkpr83v2qAz_fyLuo'
 
 
 class Order(models.Model):
@@ -26,7 +30,12 @@ class Order(models.Model):
 
 @receiver(pre_save, sender=Order)
 def send_msg(sender, **kwargs):
-    print('send telegram msg')
+    order = kwargs['instance']
+    client = Client.objects.filter(order__id=order.id).first()
+    if client is not None:
+        chat_id = client.telegram_id
+        requests.get(f'https://api.telegram.org/bot{token}/'
+                     f'sendMessage?chat_id={chat_id}&text=статус заявки изменен на {order.get_status_display()}')
 
 
 pre_save.connect(send_msg, Order.status, dispatch_uid="my_unique_identifier")
