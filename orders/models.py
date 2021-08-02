@@ -11,7 +11,7 @@ import requests
 
 # Create your models here.
 
-token = '1939870399:AAGtbP_G7iEVl3EvDxIkpr83v2qAz_fyLuo'
+token = ''
 
 
 class Order(models.Model):
